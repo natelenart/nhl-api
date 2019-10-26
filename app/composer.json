@@ -1,0 +1,15 @@
+{
+    "name": "natelenart/nhl-fetcher",
+    "description": "Fetches data from the NHL stats API",
+    "type": "project",
+    "require": {},
+    "require-dev": {
+        "symfony/var-dumper": "^4.3"
+    },
+    "license": "proprietary",
+    "authors": [{
+        "name": "Nate Lenart",
+        "email": "natelenart@yahoo.com"
+    }],
+    "minimum-stability": "stable"
+}

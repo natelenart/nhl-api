@@ -1,8 +1,11 @@
-FROM rust:1.31
+FROM rust:latest
 
 WORKDIR /usr/src/app
-COPY . .
 
-RUN cargo install --path .
+RUN cargo install diesel_cli
 
-CMD ["app"]
+#COPY . .
+
+#RUN cargo install --path .
+
+CMD ["nhl-api"]

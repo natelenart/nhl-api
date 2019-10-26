@@ -1,0 +1,8 @@
+DROP TABLE IF EXISTS `matchups`;
+DROP TABLE IF EXISTS `user_teams`;
+DROP TABLE IF EXISTS `user_roles`;
+DROP TABLE IF EXISTS `game_types`;
+DROP TABLE IF EXISTS `teams`;
+DROP TABLE IF EXISTS `seasons`;
+DROP TABLE IF EXISTS `roles`;
+DROP TABLE IF EXISTS `users`;

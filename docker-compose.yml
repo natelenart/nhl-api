@@ -1,0 +1,43 @@
+version: '3.6'
+
+services:
+  api:
+    image: nhl-api
+    build: ./api
+    volumes:
+      - ./api:/usr/src/app
+    networks:
+      - frontend
+      - backend
+    env_file:
+      - ./api/.env
+    command: [ "tail", "-f", "/dev/null" ]
+  db:
+    image: nhl-db
+    build: ./mysql
+    command: --default-authentication-plugin=mysql_native_password
+    networks:
+      - backend
+    volumes:
+      - mysql-data:/var/lib/mysql
+      - ./mysql/init:/init
+    env_file:
+      - ./mysql/.env
+  # app:
+  #   image: nhl-app
+  #   build: ./app
+  #   networks:
+  #     - frontend
+  #     - backend
+  #   volumes:
+  #     - ./app:/app
+  #   ports:
+  #     - 8080:8080
+
+networks:
+  frontend:
+  backend:
+    internal: true
+
+volumes:
+  mysql-data:
