@@ -23,25 +23,17 @@ services:
   #   env_file:
   #     - ./mysql/.env
   app:
-    image: nhl-app
     build:
-      context: ./app
-      target: nhl-app
+      target: nhl-app-dev
       args:
         TIMEZONE: America/Los_Angeles
-    networks:
-      - frontend
-      - backend
+    #volumes:
+    #  - ./app:/app
   nginx:
-    image: nhl-nginx
-    build: ./nginx
-    networks:
-      - frontend
-      - backend
-networks:
-  frontend:
-  backend:
-    internal: true
+    #volumes:
+    #  - ./app/public:/app/public
+    ports:
+      - 8080:80
 
 # volumes:
 #   mysql-data:
