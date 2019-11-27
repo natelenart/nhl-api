@@ -27,11 +27,11 @@ services:
       target: nhl-app-dev
       args:
         TIMEZONE: America/Los_Angeles
-    #volumes:
-    #  - ./app:/app
+    volumes:
+      - ./app:/app
   nginx:
-    #volumes:
-    #  - ./app/public:/app/public
+    volumes:
+      - ./app/public:/app/public
     ports:
       - 8080:80
 
